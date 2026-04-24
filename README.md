@@ -1,6 +1,6 @@
-# Projet Ansible simple
+# Projet Ansible 
 
-Ce dépôt contient un mini projet pour monter en compétence sur Ansible en restant sur un cas concret et facile à comprendre.
+Un mini projet pour monter en compétence sur Ansible en restant sur un cas concret.
 
 ## Objectif
 
