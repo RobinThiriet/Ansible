@@ -1,0 +1,32 @@
+---
+- name: Verify supported OS family
+  ansible.builtin.assert:
+    that:
+      - ansible_os_family == "Debian"
+    fail_msg: "Ce projet demo supporte uniquement Debian/Ubuntu."
+    success_msg: "OS compatible detecte."
+
+- name: Update apt cache
+  ansible.builtin.apt:
+    update_cache: true
+    cache_valid_time: 3600
+
+- name: Install demo packages
+  ansible.builtin.apt:
+    name: "{{ web_demo_packages }}"
+    state: present
+
+- name: Deploy demo homepage
+  ansible.builtin.template:
+    src: index.html.j2
+    dest: "{{ web_demo_site_path }}"
+    owner: root
+    group: root
+    mode: "0644"
+  notify: Restart nginx
+
+- name: Ensure nginx is enabled and started
+  ansible.builtin.service:
+    name: "{{ web_demo_service_name }}"
+    enabled: true
+    state: started

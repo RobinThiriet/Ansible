@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ demo_site_title }}</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 3rem;
+        background: linear-gradient(135deg, #f7f4ea 0%, #dce8f5 100%);
+        color: #1f2937;
+      }
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.92);
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+      h1 {
+        margin-top: 0;
+      }
+      code {
+        background: #eef2ff;
+        padding: 0.2rem 0.4rem;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>{{ demo_site_title }}</h1>
+      <p>{{ demo_site_message }}</p>
+      <p>Proprietaire du labo : <strong>{{ demo_owner }}</strong></p>
+      <p>Machine geree : <code>{{ inventory_hostname }}</code></p>
+      <p>Genere le : <code>{{ ansible_date_time.iso8601 }}</code></p>
+    </main>
+  </body>
+</html>

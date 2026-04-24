@@ -1,0 +1,7 @@
+---
+- name: Configure un serveur web de demonstration
+  hosts: local
+  become: true
+
+  roles:
+    - role: web_demo

@@ -1,0 +1,8 @@
+demo_site_title: "Bienvenue sur mon labo Ansible"
+demo_site_message: "Cette page a ete generee par Ansible depuis un template Jinja2."
+demo_owner: "Robin"
+
+web_demo_packages:
+  - nginx
+  - curl
+  - git
